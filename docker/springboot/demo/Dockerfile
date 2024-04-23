@@ -1,17 +1,20 @@
 # Build stage
-FROM eclipse-temurin:21.0.2_13-jdk-alpine AS build
+FROM eclipse-temurin:21-alpine AS build
 WORKDIR /app
 
-# dependencies 는 .gradle 에 저장되고 캐싱되어 성능 향상에 도움이 된다.
-COPY . /app
+COPY build.gradle /app
+COPY settings.gradle /app
+COPY gradle /app/gradle
+COPY gradlew /app
 RUN chmod +x /app/gradlew
+
 RUN /app/gradlew dependencies
 
 COPY src src
 RUN /app/gradlew bootJar
 
-FROM eclipse-temurin:21.0.2_13-jdk-alpine
+# Run stage
+FROM eclipse-temurin:21-jre-alpine
 COPY --from=build /app/build/libs/*.jar app.jar
 
-EXPOSE 28080
 ENTRYPOINT ["java","-jar","/app.jar"]
