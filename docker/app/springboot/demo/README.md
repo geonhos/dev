@@ -33,5 +33,7 @@ docker-compose down
 ```
 
 #### http 테스트
-- [demo.http](/home/ghyeom/my/dev/docker/springboot/demo/src/main/java/com/example/demo/web/demo.http) 요청
+```shell
+curl http://localhost:28080/demo
+```
 - 정상 응답 확인
