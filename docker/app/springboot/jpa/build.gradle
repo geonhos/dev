@@ -19,9 +19,6 @@ dependencies {
     //web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
     // validator
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
@@ -36,6 +33,19 @@ dependencies {
 
     // mariadb
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.testcontainers:testcontainers'
+    testImplementation 'org.testcontainers:junit-jupiter'
+
+    // 테스트 컨테이너 DB 의존성 참고
+    // MySQL : https://www.testcontainers.org/modules/databases/mysql/
+    // MariaDB : https://www.testcontainers.org/modules/databases/mariadb/
+    // MongoDB : https://www.testcontainers.org/modules/databases/mongodb/
+    // PostgreSQL: https://java.testcontainers.org/modules/databases/postgres/
+    testImplementation 'org.testcontainers:mariadb'
 }
 
 tasks.named('test') {
