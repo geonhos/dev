@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  web-demo:
+    container_name: jpa-demo
+    build: ./
+    ports:
+      - '8081:8080'
+    env_file:
+      - env/server.env
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.11.7
+    restart: always
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./conf.d:/etc/mysql/conf.d
+      - ./data:/var/lib/mysql
+    env_file:
+      - env/db.env

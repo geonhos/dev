@@ -1,12 +1,12 @@
 ### member 전체 조회
-GET localhost:8080/api/member
+GET localhost:8081/api/member
 
 ### member 단건 조회
 @getId = 1
-GET localhost:8080/api/member/{{getId}}
+GET localhost:8081/api/member/{{getId}}
 
 ### member 등록
-POST localhost:8080/api/member/create
+POST localhost:8081/api/member/create
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 ### member 수정
 @updateId = 1
-POST localhost:8080/api/member/update
+POST localhost:8081/api/member/update
 Content-Type: application/json
 
 {
@@ -23,9 +23,9 @@ Content-Type: application/json
   "name": "김길동"
 }
 
-### member 수정
+### member 삭제
 @deleteId = 1
-POST localhost:8080/api/member/delete
+POST localhost:8081/api/member/delete
 Content-Type: application/json
 
 {

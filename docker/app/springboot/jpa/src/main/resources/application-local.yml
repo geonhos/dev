@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3308/my
     driver-class-name: org.mariadb.jdbc.Driver
-    username: user
-    password: password
+    url: ${LOCAL_DATABASE_URL}
+    username: ${LOCAL_DATABASE_USERNAME}
+    password: ${LOCAL_DATABASE_PASSWORD}
 
   jpa:
     hibernate:
@@ -12,6 +12,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
 
 server:
   port: 8080

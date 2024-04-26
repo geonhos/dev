@@ -1,0 +1,19 @@
+[mysqld]
+# utf8mb4: 이모지 사용 가능
+init_connect=SET collation_connection = utf8mb4_general_ci
+init_connect=SET NAMES utf8mb4
+collation-server=utf8mb4_general_ci
+character-set-server=utf8mb4
+
+# table 소문자
+lower_case_table_names=1
+
+# transaction 독립성 level
+transaction-isolation=READ-COMMITTED
+
+# 변경 행 Base64 Encoding 후 binary log 에 저장
+binlog-format=ROW
+
+# 1: 테이블 단위로 테이블 스페이스 생성
+innodb-file-per-table=1
+skip-innodb-read-only-compressed
