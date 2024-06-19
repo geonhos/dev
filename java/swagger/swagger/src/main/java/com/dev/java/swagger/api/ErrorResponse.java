@@ -1,4 +1,4 @@
-package com.dev.java.swagger.swagger.api;
+package com.dev.java.swagger.api;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;

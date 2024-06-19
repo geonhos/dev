@@ -1,4 +1,4 @@
-package com.dev.java.swagger.swagger.api;
+package com.dev.java.swagger.api;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
